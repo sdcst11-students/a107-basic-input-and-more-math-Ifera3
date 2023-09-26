@@ -21,3 +21,23 @@ Enter your income: 125000
 Your federal income tax is: 24411.7
 
 '''
+i = int(input("Enter your income: $"))
+if i < 49020:
+    tax = i * 0.15
+else:
+    tax = 49020 * 0.15
+    if i < 98040:
+        tax = tax + ((i - 49020) * 0.205)
+    else:
+        tax = tax + ((98040 - 49020) * 0.205)
+        if i < 151978:
+            tax = tax + ((i - 98040) * 0.26)
+        else:
+            tax = tax + ((151978 - 98040) * 0.26)
+            if i < 216511:
+                tax = tax + ((i - 151978) * 0.29)
+            else:
+                tax = tax + ((216511 - 151978) * 0.29)
+                tax = tax + ((i - 216511) * 0.33)
+tax = round(tax, 2)
+print(f"Your federal income tax is: ${tax}")

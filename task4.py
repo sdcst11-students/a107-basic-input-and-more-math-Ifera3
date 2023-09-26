@@ -15,3 +15,9 @@ Enter a length in centimeters: 32
 32 centimeters is 1 feet and 1 inches
 ```
 """
+import math
+
+cm = int(input("Enter a length in centimeters: "))
+feet = math.floor(cm / 30.48)
+inch = round((cm % 30.48) / 2.54)
+print(f"{cm} centimeters is {feet} feet and {inch} inches")
